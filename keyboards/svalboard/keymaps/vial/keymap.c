@@ -41,11 +41,7 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
   return state;
 }
 
-layer_state_t layer_state_set_user(layer_state_t state) {
-  state = update_tri_layer_state(state, _SYM, _NAV, _NUM);
-  sval_set_active_layer(get_highest_layer(state), false);
-  return state;
-}
+
 
 enum layer {
     _NORMAL,
@@ -282,4 +278,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     );
 
     return true;
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+  state = update_tri_layer_state(state, _SYM, _NAV, _NUM);
+  sval_set_active_layer(get_highest_layer(state), false);
+  return state;
 }

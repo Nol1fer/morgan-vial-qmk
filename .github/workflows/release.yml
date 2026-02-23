@@ -20,20 +20,20 @@ jobs:
 
     strategy:
       matrix:
-        keyboard: [ svalboard/trackpoint, svalboard, svalboard/trackball/pmw3360, svalboard/trackball/pmw3389, svalboard/azoteq ]
+        keyboard: [ svalboard, svalboard/trackball/pmw3389 ]
         keymap: [ vial ]
         side: [ left, right ]
 
-  build_blank:
-    uses: ./.github/workflows/build-firmware.yml
-    with:
-      keyboard: ${{ matrix.keyboard }}
-      keymap: ${{ matrix.keymap }}
-      side: ${{ matrix.side }}
+  # build_blank:
+  #   uses: ./.github/workflows/build-firmware.yml
+  #   with:
+  #     keyboard: ${{ matrix.keyboard }}
+  #     keymap: ${{ matrix.keymap }}
+  #     side: ${{ matrix.side }}
 
-    strategy:
-      matrix:
-        keyboard: [ svalboard ]
-        keymap: [ blank ]
-        side: [ left, right ]
+  #   strategy:
+  #     matrix:
+  #       keyboard: [ svalboard ]
+  #       keymap: [ blank ]
+  #       side: [ left, right ]
 
