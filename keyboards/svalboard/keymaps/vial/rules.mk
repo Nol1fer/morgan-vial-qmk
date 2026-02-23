@@ -4,3 +4,5 @@ VIAL_INSECURE ?= yes
 KEY_OVERRIDE_ENABLE = yes
 STENO_ENABLE = yes
 STENO_PROTOCOL = geminipr
+
+SRC += ./oneshot.c
